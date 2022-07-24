@@ -1,0 +1,317 @@
+POST http://localhost:8080/rumahsakit/user/register
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODY4MTM2MiwiZXhwIjoxNjU4NjgxOTYyLCJqdGkiOiI3OGQyZTgxMC1jMWVhLTQ5ZjAtOTNkNS1hNTBkYzhmMTRhM2YifQ.GRLfDLJBaKandjB8w_MFIxHVdI3CxMSWuWg91CFJO00GcHdj291tSCSyCybW5tIwfEWGdGjYRLOjbZLItswBdOvC5sbsXnwq3xpC4Ehh2nGSR9AVK6kK85RftP_2FwEKQVQKSbXh50y2zDGkkLt2hcQ32GqNBVCp7XX_UhBgS-3G14Uj9z5rOkn_UdjfDJTJYPAVecjipfP4-lJ1he_eSHhofh87uklUdN_REAIuJsXbD4yI4KK25oakCBveKVY1jf3w8VcIwxVNeYes6xJeV56xMbQ44D2P5dHTAS4d0PBMuUpGijAmtKWVMsJCSiqJfEw88gJOaLVPSRf-tuheVg
+Content-Type: application/json
+
+{
+  "name":"redha",
+  "username":"tata redha alfath",
+  "password":"alfath",
+  "email":"alfath@gmail.com",
+  "phoneNumber":"085325224829",
+  "userType":"member",
+  "permissions":[
+    "admin"
+  ]
+}
+
+###
+POST http://localhost:8080/rumahsakit/user/login
+Content-Type: application/json
+
+{
+
+  "username":"superAdmin",
+  "password":"superAdmin"
+}
+
+
+# ======================================================================================= #
+### DOKTER
+### ADD DOKTER
+POST http://localhost:8080/rumahsakit/dokter
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc3Nzc4LCJleHAiOjE2NTg2NzgzNzgsImp0aSI6IjdlMjk0ZmI4LWUxMDEtNDc0NC1iZDQ0LTI5NmZjZjFhNTQ0YSJ9.kwAgRqwDsfrBIEfObBdF-UfnUFWpRayJ62fjV4WTsjQauk4gqb_QSiNOPvtWSm9c7l8fDxwarwqDa4Pud1ULMgcZfRCkX4fat2YOGn-ihAWM-KQtE1o8bJj8khqrGzFDIe9uOZtDKKwJudxRhY7aJ-eDjpNqIpKb3083E0NVizwXdMb-gLN0HhLPnz3Xk3NlScGnWl2KdBIJT4linKi0u-zB9AtrXjjRfyKH7rpdxI-_s864itg-F4AL7tTeFP6mhCNGoO5H5DCk3ukBuMoV3dXWDcTorWBGV4Zkt7Q1tfD4Gqj20dCiPqNKnY4pAuSwjgPUg9z0gvrUqz6khqXHqw
+Content-Type: application/json
+
+{
+  "nama_lengkap":"darmanto",
+  "is_spesialis":false,
+  "spesialis_nama":"-",
+  "email":"darmanto@gmail.com",
+  "phone_number":"085325224820",
+  "status":"active",
+  "gaji":10000000
+}
+
+### GET DOKTER
+// pagination 5 list data with filter by nama, email, phoneNumber, spesialis
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/dokter
+
+### UPDATE GAJI DOKTER by id
+PUT http://localhost:8080/rumahsakit/dokter/1
+Content-Type: application/json
+
+{
+  "gaji":4000000
+}
+
+# ======================================================================================= #
+### PERAWAT
+### ADD PERAWAT
+POST http://localhost:8080/rumahsakit/perawat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc2NjQyLCJleHAiOjE2NTg2NzcyNDIsImp0aSI6IjNlNTRkMDU5LTJjODAtNDcxOS04M2YxLTMzZTQyYWQ3MmZjMyJ9.C4BrZpA8mYHFGNsbSLkeNxWzzpql7CvV5yaPprFOFsgvxBHN3kjSV2EGPyzyIX5hLxS9nllJcVeOM7VBPVEku3QiykjIE3lrc-sjLBn4RxSPVyy2OiQX07Msy4dpDthn1j9GmZnIQKcGYqAh2rvDbbPnsycwVZLLpOslcghrjDvr3ZmWFoUtUAhE39M4bEoiZMTT0-tIm17XTMKqZUZN93ZTb44X_o3lxYO37hYe9mAWgk4wpEHYB6gu0q_VOPyH3fl1o7Ze7IMQU5YcpRRk8XyGYR5HqGOQVS74b4vG9d3v4mxu__wdktX_Aof2V63J7B0mvnNOwA5AWo9OeJ7Oug
+Content-Type: application/json
+
+{
+  "nama_lengkap":"Teguh",
+  "gender":"pria",
+  "gaji":10000000,
+  "email":"teguh@gmail.com",
+  "phone_number":"085325224824",
+  "status":"active"
+}
+
+### GET PERAWAT
+// pagination 5 list data with filter by nama, email, phoneNumber
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/perawat
+
+
+### UPDATE GAJI PERAWAT by id
+PUT http://localhost:8080/rumahsakit/perawat/1
+Content-Type:  application/json
+
+{
+  "gaji": 15000000
+}
+
+
+# ======================================================================================= #
+### STAFF
+### LIST POSISI STAFF
+GET http://localhost:8080/rumahsakit/staff/posisi
+
+### ADD STAFF
+POST http://localhost:8080/rumahsakit/staff
+Content-Type: application/json
+
+{
+  "nama_lengkap":"jamal",
+  "gender":"pria",
+  "posisi":"engineer",
+  "gaji":20000000,
+  "email":"jamal@gmail.com",
+  "phone_number":"085325224829",
+  "status":"staff active"
+}
+
+### GET STAFF
+// pagination 5 list data with filter by nama, email, phoneNumber
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/staff
+
+### DELETE STAFF By Id
+DELETE http://localhost:8080/rumahsakit/staff/2
+
+
+### UPDASTE GAJI STAFF By Id
+PUT http://localhost:8080/rumahsakit/staff/2
+Content-Type: application/json
+
+{
+  "gaji":15000000
+}
+
+# ======================================================================================= #
+### DAFTAR SHIFT
+### ADD DAFTAR SHIFT
+POST http://localhost:8080/rumahsakit/daftar_shift
+Content-Type: application/json
+
+{
+  "kategori": "staff",
+  "foreign_id":2
+}
+
+### GET DAFTAR SHIFT
+// pagination 5 list data with filter by kagegori
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/daftar_shift
+
+### UPDATW DAFTAR SHIFT
+PUT http://localhost:8080/rumahsakit/daftar_shift/1
+Content-Type: application/json
+
+{
+  "kategori": "perawat",
+  "foreign_id":1
+}
+
+
+
+# ======================================================================================= #
+### JADWAL PRAKTIK
+### ADD JADWAL PRAKTIK
+POST http://localhost:8080/rumahsakit/jadwal_praktik
+Content-Type: application/json
+
+{
+  "hari": "rabu",
+  "deskripsi":"Operasi Plastik",
+  "dokter_id":1
+}
+
+### GET JADWAL PRAKTIK
+// pagination 5 list data with filter by hari
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/jadwal_praktik
+
+
+### UPDATW JADWAL PRAKTIK by id
+PUT  http://localhost:8080/rumahsakit/jadwal_praktik/1
+Content-Type: application/json
+
+{
+  "hari": "jumat",
+  "deskripsi":"Lasik",
+  "dokter_id":1
+}
+
+
+
+# ======================================================================================= #
+### OBAT
+### LIST OBAT KATEGORI
+GET http://localhost:8080/rumahsakit/obat/kategori
+
+### ADD OBAT
+POST http://localhost:8080/rumahsakit/obat
+Content-Type: application/json
+
+{
+  "nama_obat":"Sacatonik ABC",
+  "produksi":"kimia farma",
+  "obat_kategori":"syrup",
+  "deskripsi":"Obat batuk"
+}
+
+### GET OBAT
+// pagination 5 list data with filter by nama, produksi, kategori
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/obat
+
+### UPDATE OBAT
+PUT http://localhost:8080/rumahsakit/obat/1
+Content-Type: application/json
+
+{
+  "nama_obat":"Multivitamin",
+  "produksi":"Multivit Jaya",
+  "obat_kategori":"pil",
+  "deskripsi":"Vitamin anak"
+}
+
+### DELETE OBAT By Id
+DELETE  http://localhost:8080/rumahsakit/obat/1
+
+
+
+# ======================================================================================= #
+### RUANG INAP
+### GET KATEGORI RUANG INAP
+GET http://localhost:8080/rumahsakit/ruang_inap/kategori
+
+### ADD RUANG INAP
+POST http://localhost:8080/rumahsakit/ruang_inap
+Content-Type: application/json
+
+{
+  "prefix_ruangan":"Mawar",
+  "nomor_ruangan":"A25",
+  "kategori_ruangan":"VVIP",
+  "is_kosong":true
+}
+
+### GET LIST RUANG INAP
+// pagination 5 list data with filter by prefix, nomor
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/ruang_inap
+
+### UPDATE RUANG INAP by id
+PUT http://localhost:8080/rumahsakit/ruang_inap/1
+Content-Type: application/json
+
+{
+  "prefix_ruangan":"Dandelion",
+  "nomor_ruangan":"A21",
+  "kategori_ruangan":"VVIP",
+  "is_kosong":true
+}
+
+### DELETE RUANG INAP by id
+DELETE  http://localhost:8080/rumahsakit/ruang_inap/1
+
+
+# ======================================================================================= #
+### DAFTAR RAWAT INAP
+### ADD DAFTAR RAWAT INAP
+POST http://localhost:8080/rumahsakit/daftar_rawat_inap
+Content-Type: application/json
+
+{
+  "pasien_id":1,
+  "ruang_inap_id":2,
+  "dokter_id":1,
+  "perawat_satu_id":1,
+  "perawat_dua_id":1
+}
+### GET LIST DAFTAR RAWAT INAP 
+// pagination 5 list data 
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/daftar_rawat_inap?page=1
+
+### CHECKOUT DAFTAR RAWAT INAP by id
+PUT http://localhost:8080/rumahsakit/daftar_rawat_inap/checkout/1
+
+
+
+
+# ======================================================================================= #
+### PASIEN
+### ADD PASIEN
+POST http://localhost:8080/rumahsakit/pasien
+Content-Type: application/json
+
+{
+  "nama_lengkap":"Mahendra",
+  "gender":"pria",
+  "status":"mahasiswa",
+  "address":"pati",
+  "email":"mahendra@gmail.com",
+  "phone_number":"08532522120",
+  "is_cover_bpjs":true
+}
+
+
+### GET PASIEN
+// pagination 5 list data with filter by nama, email, phoneNumber
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/pasien
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc2NjQyLCJleHAiOjE2NTg2NzcyNDIsImp0aSI6IjNlNTRkMDU5LTJjODAtNDcxOS04M2YxLTMzZTQyYWQ3MmZjMyJ9.C4BrZpA8mYHFGNsbSLkeNxWzzpql7CvV5yaPprFOFsgvxBHN3kjSV2EGPyzyIX5hLxS9nllJcVeOM7VBPVEku3QiykjIE3lrc-sjLBn4RxSPVyy2OiQX07Msy4dpDthn1j9GmZnIQKcGYqAh2rvDbbPnsycwVZLLpOslcghrjDvr3ZmWFoUtUAhE39M4bEoiZMTT0-tIm17XTMKqZUZN93ZTb44X_o3lxYO37hYe9mAWgk4wpEHYB6gu0q_VOPyH3fl1o7Ze7IMQU5YcpRRk8XyGYR5HqGOQVS74b4vG9d3v4mxu__wdktX_Aof2V63J7B0mvnNOwA5AWo9OeJ7Oug
+
+### UPDATE PASIEN by id
+PUT http://localhost:8080/rumahsakit/pasien/1
+Content-Type: application/json
+
+{
+  "nama_lengkap":"Mahendra Kusuma",
+  "gender":"pria",
+  "status":"Pekerja",
+  "address":"Magelang",
+  "email":"mahendrakusuma@gmail.com",
+  "phone_number":"08532522490",
+  "is_cover_bpjs":false
+}
+
+### DELETE PASIEN by id
+DELETE  http://localhost:8080/rumahsakit/pasien/1
