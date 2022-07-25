@@ -25,12 +25,13 @@ public class PerawatController {
   PerawatService perawatService;
 
   @POST
-  @RolesAllowed({ "user", "superAdmin" })
+  @RolesAllowed({ "user"})
   public Response create(JsonObject req) {
     return perawatService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("nama") String nama,
       @QueryParam("email") String email,
@@ -40,6 +41,7 @@ public class PerawatController {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response updateGaji(
       @PathParam("id") Long id,

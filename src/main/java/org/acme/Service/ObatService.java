@@ -11,7 +11,6 @@ import javax.persistence.Query;
 import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
 
-import org.acme.Model.KategoriObat;
 import org.acme.Model.Obat;
 import org.acme.Model.KategoriObat.ObatKategori;
 
@@ -55,6 +54,11 @@ public class ObatService {
       case "other":
         obat.setObat_kategori(ObatKategori.Other);
         break;
+      default:
+        JsonObject result = new JsonObject();
+        result.put("status", "error");
+        result.put("message", "Unknown Kategori Obat!!");
+        return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
     obat.setNamaObat(req.getString("nama_obat"));
@@ -163,6 +167,11 @@ public class ObatService {
       case "other":
         obat.setObat_kategori(ObatKategori.Other);
         break;
+      default:
+        JsonObject result = new JsonObject();
+        result.put("status", "error");
+        result.put("message", "Unknown Kategori Obat!!");
+        return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
     obat.setNamaObat(req.getString("nama_obat"));

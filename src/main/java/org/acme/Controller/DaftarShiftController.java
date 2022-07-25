@@ -1,5 +1,6 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -25,11 +26,13 @@ public class DaftarShiftController {
   DaftarShiftService shiftService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return shiftService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("kategori") String kategori,
       @QueryParam("page") int page) {
@@ -37,11 +40,11 @@ public class DaftarShiftController {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response update(
       @PathParam("id") Long id,
       JsonObject req) {
     return shiftService.update(id, req);
   }
-
 }

@@ -1,0 +1,29 @@
+
+# ======================================================================================= #
+### USER
+### REGISTRATION
+POST http://localhost:8080/rumahsakit/user/register
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODczNjQ0MiwiZXhwIjoxNjU4NzM3MDQyLCJqdGkiOiJjNzdkYjY3NS1lMzU5LTRmZDMtYWRhZC1mY2RmZWU0NGZiMjEifQ.Fav_BXWBr5OzC7RCI6eOSbJfhaRSs_4r9hn3q9MLTr1inZOA6-Mxht5J7T42-QdjZnyFqdSuFimwx_1gSokvCGqia2FPqbRTpNj3du7EfTfY2Q7__BuAg6AJfNrsXRo03yr-doLljHzQzx-GvEcs_s37eSHysbesczVNHueFbe9qJeO6MB1REFLa64CPQreIODSZIx1EJAYMdRyL8fDkbBD_dTacidF0MY9y4a00MljKijY76_j3_k_emDB_MGtocwiGtPnbXS-GLQ_gDINmEkLrCKx1rgwpLxpvX4nadOEPQy68tDSITWnf3VqjWlg-3N1KwHwUevyp2T_SCpEhKw
+Content-Type: application/json
+
+{
+  "name":"alfath",
+  "username":"alfath",
+  "password":"alfath",
+  "email":"alfath@gmail.com",
+  "phoneNumber":"085325224829",
+  "userType":"user",
+  "permissions":[
+    "user"
+  ]
+}
+
+### LOGIN
+POST http://localhost:8080/rumahsakit/user/login
+Content-Type: application/json
+
+{
+
+  "username":"redha",
+  "password":"redha"
+}

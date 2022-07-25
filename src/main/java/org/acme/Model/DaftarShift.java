@@ -2,12 +2,17 @@ package org.acme.Model;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.HashSet;
+import java.util.Set;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
@@ -31,6 +36,11 @@ public class DaftarShift extends AuditModel implements Serializable {
 
   @Column(name = "end_datetime", nullable = false, columnDefinition = "timestamp")
   private LocalDateTime endDateTime;
+
+  @ElementCollection
+  @CollectionTable(name = "daftar_shift_hari", joinColumns = @JoinColumn(name = "daftar_shift_id"))
+  @Column(name = "hari", nullable = false)
+  private Set<String> hari = new HashSet<>();
 
   public Long getId() {
     return this.id;
@@ -66,6 +76,18 @@ public class DaftarShift extends AuditModel implements Serializable {
 
   public void setEndDateTime(LocalDateTime endDateTime) {
     this.endDateTime = endDateTime;
+  }
+
+  public void setId(Long id) {
+    this.id = id;
+  }
+
+  public Set<String> getHari() {
+    return this.hari;
+  }
+
+  public void setHari(Set<String> hari) {
+    this.hari = hari;
   }
 
 }

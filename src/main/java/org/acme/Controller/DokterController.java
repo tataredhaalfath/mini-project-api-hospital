@@ -30,6 +30,7 @@ public class DokterController {
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("nama") String nama,
       @QueryParam("email") String email,
@@ -39,8 +40,8 @@ public class DokterController {
     return dokterService.getAll(nama, email, phoneNumber, spesialis, page);
   }
 
-
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response updateGaji(
       @PathParam("id") Long id,

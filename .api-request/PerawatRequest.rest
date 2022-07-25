@@ -1,0 +1,32 @@
+# ======================================================================================= #
+### PERAWAT
+### ADD PERAWAT
+POST http://localhost:8080/rumahsakit/perawat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
+Content-Type: application/json
+
+{
+  "nama_lengkap":"Sarah",
+  "gender":"wanita",
+  "gaji":10000000,
+  "email":"sarah@gmail.com",
+  "phone_number":"085325224834",
+  "status":"active"
+}
+
+### GET PERAWAT
+// pagination 5 list data with filter by nama, email, phoneNumber
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/perawat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
+
+
+### UPDATE GAJI PERAWAT by id
+PUT http://localhost:8080/rumahsakit/perawat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
+Content-Type:  application/json
+
+{
+  "gaji": 15000000
+}
+

@@ -45,7 +45,7 @@ public class User extends AuditModel implements Serializable {
   @ElementCollection
   @CollectionTable(name = "user_permission", joinColumns = @JoinColumn(name = "user_id"))
   @Column(name = "name", nullable = false)
-  Set<String> permissionName = new HashSet<>();
+  private Set<String> permissionName = new HashSet<>();
 
   public Long getId() {
     return id;

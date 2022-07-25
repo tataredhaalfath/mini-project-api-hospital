@@ -1,27 +1,30 @@
+# ======================================================================================= #
+### USER
+### REGISTRATION
 POST http://localhost:8080/rumahsakit/user/register
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODY4MTM2MiwiZXhwIjoxNjU4NjgxOTYyLCJqdGkiOiI3OGQyZTgxMC1jMWVhLTQ5ZjAtOTNkNS1hNTBkYzhmMTRhM2YifQ.GRLfDLJBaKandjB8w_MFIxHVdI3CxMSWuWg91CFJO00GcHdj291tSCSyCybW5tIwfEWGdGjYRLOjbZLItswBdOvC5sbsXnwq3xpC4Ehh2nGSR9AVK6kK85RftP_2FwEKQVQKSbXh50y2zDGkkLt2hcQ32GqNBVCp7XX_UhBgS-3G14Uj9z5rOkn_UdjfDJTJYPAVecjipfP4-lJ1he_eSHhofh87uklUdN_REAIuJsXbD4yI4KK25oakCBveKVY1jf3w8VcIwxVNeYes6xJeV56xMbQ44D2P5dHTAS4d0PBMuUpGijAmtKWVMsJCSiqJfEw88gJOaLVPSRf-tuheVg
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODczNjQ0MiwiZXhwIjoxNjU4NzM3MDQyLCJqdGkiOiJjNzdkYjY3NS1lMzU5LTRmZDMtYWRhZC1mY2RmZWU0NGZiMjEifQ.Fav_BXWBr5OzC7RCI6eOSbJfhaRSs_4r9hn3q9MLTr1inZOA6-Mxht5J7T42-QdjZnyFqdSuFimwx_1gSokvCGqia2FPqbRTpNj3du7EfTfY2Q7__BuAg6AJfNrsXRo03yr-doLljHzQzx-GvEcs_s37eSHysbesczVNHueFbe9qJeO6MB1REFLa64CPQreIODSZIx1EJAYMdRyL8fDkbBD_dTacidF0MY9y4a00MljKijY76_j3_k_emDB_MGtocwiGtPnbXS-GLQ_gDINmEkLrCKx1rgwpLxpvX4nadOEPQy68tDSITWnf3VqjWlg-3N1KwHwUevyp2T_SCpEhKw
 Content-Type: application/json
 
 {
-  "name":"redha",
-  "username":"tata redha alfath",
+  "name":"alfath",
+  "username":"alfath",
   "password":"alfath",
   "email":"alfath@gmail.com",
   "phoneNumber":"085325224829",
-  "userType":"member",
+  "userType":"user",
   "permissions":[
-    "admin"
+    "user"
   ]
 }
 
-###
+### LOGIN
 POST http://localhost:8080/rumahsakit/user/login
 Content-Type: application/json
 
 {
 
-  "username":"superAdmin",
-  "password":"superAdmin"
+  "username":"redha",
+  "password":"redha"
 }
 
 
@@ -29,14 +32,14 @@ Content-Type: application/json
 ### DOKTER
 ### ADD DOKTER
 POST http://localhost:8080/rumahsakit/dokter
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc3Nzc4LCJleHAiOjE2NTg2NzgzNzgsImp0aSI6IjdlMjk0ZmI4LWUxMDEtNDc0NC1iZDQ0LTI5NmZjZjFhNTQ0YSJ9.kwAgRqwDsfrBIEfObBdF-UfnUFWpRayJ62fjV4WTsjQauk4gqb_QSiNOPvtWSm9c7l8fDxwarwqDa4Pud1ULMgcZfRCkX4fat2YOGn-ihAWM-KQtE1o8bJj8khqrGzFDIe9uOZtDKKwJudxRhY7aJ-eDjpNqIpKb3083E0NVizwXdMb-gLN0HhLPnz3Xk3NlScGnWl2KdBIJT4linKi0u-zB9AtrXjjRfyKH7rpdxI-_s864itg-F4AL7tTeFP6mhCNGoO5H5DCk3ukBuMoV3dXWDcTorWBGV4Zkt7Q1tfD4Gqj20dCiPqNKnY4pAuSwjgPUg9z0gvrUqz6khqXHqw
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
-  "nama_lengkap":"darmanto",
-  "is_spesialis":false,
-  "spesialis_nama":"-",
-  "email":"darmanto@gmail.com",
+  "nama_lengkap":"Tika Saraswati",
+  "is_spesialis":true,
+  "spesialis_nama":"Spesialis Mata",
+  "email":"tika@gmail.com",
   "phone_number":"085325224820",
   "status":"active",
   "gaji":10000000
@@ -46,9 +49,11 @@ Content-Type: application/json
 // pagination 5 list data with filter by nama, email, phoneNumber, spesialis
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/dokter
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 
 ### UPDATE GAJI DOKTER by id
 PUT http://localhost:8080/rumahsakit/dokter/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
@@ -59,15 +64,15 @@ Content-Type: application/json
 ### PERAWAT
 ### ADD PERAWAT
 POST http://localhost:8080/rumahsakit/perawat
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc2NjQyLCJleHAiOjE2NTg2NzcyNDIsImp0aSI6IjNlNTRkMDU5LTJjODAtNDcxOS04M2YxLTMzZTQyYWQ3MmZjMyJ9.C4BrZpA8mYHFGNsbSLkeNxWzzpql7CvV5yaPprFOFsgvxBHN3kjSV2EGPyzyIX5hLxS9nllJcVeOM7VBPVEku3QiykjIE3lrc-sjLBn4RxSPVyy2OiQX07Msy4dpDthn1j9GmZnIQKcGYqAh2rvDbbPnsycwVZLLpOslcghrjDvr3ZmWFoUtUAhE39M4bEoiZMTT0-tIm17XTMKqZUZN93ZTb44X_o3lxYO37hYe9mAWgk4wpEHYB6gu0q_VOPyH3fl1o7Ze7IMQU5YcpRRk8XyGYR5HqGOQVS74b4vG9d3v4mxu__wdktX_Aof2V63J7B0mvnNOwA5AWo9OeJ7Oug
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
-  "nama_lengkap":"Teguh",
-  "gender":"pria",
+  "nama_lengkap":"Sarah",
+  "gender":"wanita",
   "gaji":10000000,
-  "email":"teguh@gmail.com",
-  "phone_number":"085325224824",
+  "email":"sarah@gmail.com",
+  "phone_number":"085325224834",
   "status":"active"
 }
 
@@ -75,10 +80,12 @@ Content-Type: application/json
 // pagination 5 list data with filter by nama, email, phoneNumber
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/perawat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 
 
 ### UPDATE GAJI PERAWAT by id
 PUT http://localhost:8080/rumahsakit/perawat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type:  application/json
 
 {
@@ -90,18 +97,20 @@ Content-Type:  application/json
 ### STAFF
 ### LIST POSISI STAFF
 GET http://localhost:8080/rumahsakit/staff/posisi
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 
 ### ADD STAFF
 POST http://localhost:8080/rumahsakit/staff
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
-  "nama_lengkap":"jamal",
+  "nama_lengkap":"Cahyo",
   "gender":"pria",
-  "posisi":"engineer",
+  "posisi":"Security",
   "gaji":20000000,
-  "email":"jamal@gmail.com",
-  "phone_number":"085325224829",
+  "email":"cahyo@gmail.com",
+  "phone_number":"085325224842",
   "status":"staff active"
 }
 
@@ -109,13 +118,15 @@ Content-Type: application/json
 // pagination 5 list data with filter by nama, email, phoneNumber
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/staff
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 
 ### DELETE STAFF By Id
-DELETE http://localhost:8080/rumahsakit/staff/2
-
+DELETE http://localhost:8080/rumahsakit/staff/3
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 
 ### UPDASTE GAJI STAFF By Id
 PUT http://localhost:8080/rumahsakit/staff/2
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
@@ -126,25 +137,38 @@ Content-Type: application/json
 ### DAFTAR SHIFT
 ### ADD DAFTAR SHIFT
 POST http://localhost:8080/rumahsakit/daftar_shift
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
 Content-Type: application/json
 
 {
-  "kategori": "staff",
-  "foreign_id":2
+  "kategori": "perawat",
+  "foreign_id":1,
+  "hari":[
+    "senin",
+    "rabu",
+    "jumat"
+  ]
 }
 
 ### GET DAFTAR SHIFT
 // pagination 5 list data with filter by kagegori
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/daftar_shift
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 
-### UPDATW DAFTAR SHIFT
+### UPDATE DAFTAR SHIFT
 PUT http://localhost:8080/rumahsakit/daftar_shift/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
-  "kategori": "perawat",
-  "foreign_id":1
+  "kategori": "staff",
+  "foreign_id":3,
+  "hari":[
+    "selasa",
+    "kamis",
+    "sabtu"
+  ]
 }
 
 
@@ -153,22 +177,25 @@ Content-Type: application/json
 ### JADWAL PRAKTIK
 ### ADD JADWAL PRAKTIK
 POST http://localhost:8080/rumahsakit/jadwal_praktik
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
-  "hari": "rabu",
-  "deskripsi":"Operasi Plastik",
-  "dokter_id":1
+  "hari": "Jumat",
+  "deskripsi":"Operasi Mata",
+  "dokter_id":2
 }
 
 ### GET JADWAL PRAKTIK
 // pagination 5 list data with filter by hari
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/jadwal_praktik
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 
 
-### UPDATW JADWAL PRAKTIK by id
+### UPDATE JADWAL PRAKTIK by id
 PUT  http://localhost:8080/rumahsakit/jadwal_praktik/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
@@ -183,36 +210,42 @@ Content-Type: application/json
 ### OBAT
 ### LIST OBAT KATEGORI
 GET http://localhost:8080/rumahsakit/obat/kategori
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 
 ### ADD OBAT
 POST http://localhost:8080/rumahsakit/obat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
-  "nama_obat":"Sacatonik ABC",
+  "nama_obat":"Panadol",
   "produksi":"kimia farma",
-  "obat_kategori":"syrup",
-  "deskripsi":"Obat batuk"
+  "obat_kategori":"pil",
+  "deskripsi":"Obat Sakit Kepala"
 }
 
 ### GET OBAT
 // pagination 5 list data with filter by nama, produksi, kategori
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/obat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
 
 ### UPDATE OBAT
 PUT http://localhost:8080/rumahsakit/obat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
   "nama_obat":"Multivitamin",
   "produksi":"Multivit Jaya",
-  "obat_kategori":"pil",
+  "obat_kategori":"pilasa",
   "deskripsi":"Vitamin anak"
 }
 
 ### DELETE OBAT By Id
 DELETE  http://localhost:8080/rumahsakit/obat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 
 
 
@@ -220,14 +253,16 @@ DELETE  http://localhost:8080/rumahsakit/obat/1
 ### RUANG INAP
 ### GET KATEGORI RUANG INAP
 GET http://localhost:8080/rumahsakit/ruang_inap/kategori
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 
 ### ADD RUANG INAP
 POST http://localhost:8080/rumahsakit/ruang_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
-  "prefix_ruangan":"Mawar",
-  "nomor_ruangan":"A25",
+  "prefix_ruangan":"Anggrek",
+  "nomor_ruangan":"A43",
   "kategori_ruangan":"VVIP",
   "is_kosong":true
 }
@@ -236,9 +271,11 @@ Content-Type: application/json
 // pagination 5 list data with filter by prefix, nomor
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/ruang_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
 
 ### UPDATE RUANG INAP by id
 PUT http://localhost:8080/rumahsakit/ruang_inap/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
 Content-Type: application/json
 
 {
@@ -250,29 +287,7 @@ Content-Type: application/json
 
 ### DELETE RUANG INAP by id
 DELETE  http://localhost:8080/rumahsakit/ruang_inap/1
-
-
-# ======================================================================================= #
-### DAFTAR RAWAT INAP
-### ADD DAFTAR RAWAT INAP
-POST http://localhost:8080/rumahsakit/daftar_rawat_inap
-Content-Type: application/json
-
-{
-  "pasien_id":1,
-  "ruang_inap_id":2,
-  "dokter_id":1,
-  "perawat_satu_id":1,
-  "perawat_dua_id":1
-}
-### GET LIST DAFTAR RAWAT INAP 
-// pagination 5 list data 
-// can get data with page number from pagination by page
-GET http://localhost:8080/rumahsakit/daftar_rawat_inap?page=1
-
-### CHECKOUT DAFTAR RAWAT INAP by id
-PUT http://localhost:8080/rumahsakit/daftar_rawat_inap/checkout/1
-
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
 
 
 
@@ -280,15 +295,16 @@ PUT http://localhost:8080/rumahsakit/daftar_rawat_inap/checkout/1
 ### PASIEN
 ### ADD PASIEN
 POST http://localhost:8080/rumahsakit/pasien
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
 Content-Type: application/json
 
 {
-  "nama_lengkap":"Mahendra",
+  "nama_lengkap":"joko",
   "gender":"pria",
   "status":"mahasiswa",
   "address":"pati",
-  "email":"mahendra@gmail.com",
-  "phone_number":"08532522120",
+  "email":"joko@gmail.com",
+  "phone_number":"08532521120",
   "is_cover_bpjs":true
 }
 
@@ -297,10 +313,11 @@ Content-Type: application/json
 // pagination 5 list data with filter by nama, email, phoneNumber
 // can get data with page number from pagination by page
 GET http://localhost:8080/rumahsakit/pasien
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6ImFsZmF0aCIsImdyb3VwcyI6WyJhZG1pbiIsInN1cGVyQWRtaW4iLCJ1c2VyIl0sImVtYWlsIjoicmVkaGFAZW1haWwuY29tIiwiaWF0IjoxNjU4Njc2NjQyLCJleHAiOjE2NTg2NzcyNDIsImp0aSI6IjNlNTRkMDU5LTJjODAtNDcxOS04M2YxLTMzZTQyYWQ3MmZjMyJ9.C4BrZpA8mYHFGNsbSLkeNxWzzpql7CvV5yaPprFOFsgvxBHN3kjSV2EGPyzyIX5hLxS9nllJcVeOM7VBPVEku3QiykjIE3lrc-sjLBn4RxSPVyy2OiQX07Msy4dpDthn1j9GmZnIQKcGYqAh2rvDbbPnsycwVZLLpOslcghrjDvr3ZmWFoUtUAhE39M4bEoiZMTT0-tIm17XTMKqZUZN93ZTb44X_o3lxYO37hYe9mAWgk4wpEHYB6gu0q_VOPyH3fl1o7Ze7IMQU5YcpRRk8XyGYR5HqGOQVS74b4vG9d3v4mxu__wdktX_Aof2V63J7B0mvnNOwA5AWo9OeJ7Oug
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
 
 ### UPDATE PASIEN by id
 PUT http://localhost:8080/rumahsakit/pasien/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
 Content-Type: application/json
 
 {
@@ -308,10 +325,36 @@ Content-Type: application/json
   "gender":"pria",
   "status":"Pekerja",
   "address":"Magelang",
-  "email":"mahendrakusuma@gmail.com",
+  "email":"mahendra@gmail.com",
   "phone_number":"08532522490",
   "is_cover_bpjs":false
 }
 
 ### DELETE PASIEN by id
 DELETE  http://localhost:8080/rumahsakit/pasien/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+
+# ======================================================================================= #
+### DAFTAR RAWAT INAP
+### ADD DAFTAR RAWAT INAP
+POST http://localhost:8080/rumahsakit/daftar_rawat_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+Content-Type: application/json
+
+{
+  "pasien_id":2,
+  "ruang_inap_id":2,
+  "dokter_id":2,
+  "perawat_satu_id":1,
+  "perawat_dua_id":2
+}
+### GET LIST DAFTAR RAWAT INAP 
+// pagination 5 list data 
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/daftar_rawat_inap?page=1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+### CHECKOUT DAFTAR RAWAT INAP by id
+PUT http://localhost:8080/rumahsakit/daftar_rawat_inap/checkout/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg

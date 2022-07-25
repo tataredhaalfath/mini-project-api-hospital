@@ -135,6 +135,14 @@ public class RuangInapService {
       return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
+    if (ruangInap.getIsKosong() == false) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Can't update, Ruang Inap is used!!");
+
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
+
     String kategori = req.getString("kategori_ruangan");
 
     switch (kategori.toLowerCase()) {
@@ -173,6 +181,14 @@ public class RuangInapService {
       JsonObject result = new JsonObject();
       result.put("status", "error");
       result.put("message", "Ruang Inap not found!!");
+
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
+
+    if (ruangInap.getIsKosong() == false) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Can't delete, Ruang Inap is used!!");
 
       return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }

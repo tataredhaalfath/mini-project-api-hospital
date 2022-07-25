@@ -1,0 +1,42 @@
+# ======================================================================================= #
+### RUANG INAP
+### GET KATEGORI RUANG INAP
+GET http://localhost:8080/rumahsakit/ruang_inap/kategori
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+### ADD RUANG INAP
+POST http://localhost:8080/rumahsakit/ruang_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "prefix_ruangan":"Anggrek",
+  "nomor_ruangan":"A43",
+  "kategori_ruangan":"VVIP",
+  "is_kosong":true
+}
+
+### GET LIST RUANG INAP
+// pagination 5 list data with filter by prefix, nomor
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/ruang_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+### UPDATE RUANG INAP by id
+PUT http://localhost:8080/rumahsakit/ruang_inap/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "prefix_ruangan":"Dandelion",
+  "nomor_ruangan":"A21",
+  "kategori_ruangan":"VVIP",
+  "is_kosong":true
+}
+
+### DELETE RUANG INAP by id
+DELETE  http://localhost:8080/rumahsakit/ruang_inap/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+
+

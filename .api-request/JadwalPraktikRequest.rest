@@ -1,0 +1,32 @@
+# ======================================================================================= #
+### JADWAL PRAKTIK
+### ADD JADWAL PRAKTIK
+POST http://localhost:8080/rumahsakit/jadwal_praktik
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "hari": "Jumat",
+  "deskripsi":"Operasi Mata",
+  "dokter_id":2
+}
+
+### GET JADWAL PRAKTIK
+// pagination 5 list data with filter by hari
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/jadwal_praktik
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+
+### UPDATE JADWAL PRAKTIK by id
+PUT  http://localhost:8080/rumahsakit/jadwal_praktik/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "hari": "jumat",
+  "deskripsi":"Lasik",
+  "dokter_id":1
+}
+
+

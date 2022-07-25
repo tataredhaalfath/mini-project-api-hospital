@@ -1,6 +1,7 @@
 package org.acme.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -29,6 +30,17 @@ public class PerawatService {
     String status = req.getString("status");
 
     Perawat perawat = new Perawat();
+
+    List<Perawat> perawats = Perawat.findAll().list();
+    Optional<Perawat> getPerawat = perawats.stream().filter(u -> u.getEmail().equalsIgnoreCase(email))
+        .findFirst();
+
+    if (!getPerawat.isEmpty()) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Email already exist!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
 
     perawat.setNamaLengkap(nama);
     perawat.setGender(gender);

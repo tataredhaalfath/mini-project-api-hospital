@@ -1,7 +1,9 @@
 package org.acme.Service;
 
 import java.time.LocalDateTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -57,12 +59,15 @@ public class DaftarShiftService {
         return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
+    Set<String> hari = new HashSet<>(req.getJsonArray("hari").getList());
+
     LocalDateTime actulTime = LocalDateTime.now();
 
     daftarShift.setKategori(req.getString("kategori"));
     daftarShift.setForeignId(req.getLong("foreign_id"));
     daftarShift.setStartDateTime(actulTime);
     daftarShift.setEndDateTime(actulTime.plusHours(8));
+    daftarShift.setHari(hari);
     daftarShift.persist();
 
     JsonObject result = new JsonObject();
@@ -128,6 +133,7 @@ public class DaftarShiftService {
   @Transactional
   public Response update(Long id, JsonObject req) {
     DaftarShift daftarShift = DaftarShift.findById(id);
+    
     if (daftarShift == null) {
       JsonObject result = new JsonObject();
       result.put("status", "error");
@@ -167,12 +173,16 @@ public class DaftarShiftService {
         return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
+    Set<String> hari = new HashSet<>(req.getJsonArray("hari").getList());
+
     LocalDateTime actulTime = LocalDateTime.now();
 
     daftarShift.setKategori(req.getString("kategori"));
     daftarShift.setForeignId(req.getLong("foreign_id"));
     daftarShift.setStartDateTime(actulTime);
     daftarShift.setEndDateTime(actulTime.plusHours(8));
+    daftarShift.setHari(hari);
+
     daftarShift.persist();
 
     JsonObject result = new JsonObject();

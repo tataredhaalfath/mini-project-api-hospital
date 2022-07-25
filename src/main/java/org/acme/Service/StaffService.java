@@ -2,14 +2,13 @@ package org.acme.Service;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
-import javax.persistence.EnumType;
-import javax.persistence.Enumerated;
 import javax.persistence.Query;
 import javax.transaction.Transactional;
 import javax.ws.rs.core.Response;
@@ -37,6 +36,18 @@ public class StaffService {
   @Transactional
   public Response add(JsonObject req) {
     Staff staff = new Staff();
+    String email = req.getString("email");
+
+    List<Staff> staffs = Staff.findAll().list();
+    Optional<Staff> getStaff = staffs.stream().filter(u -> u.getEmail().equalsIgnoreCase(email))
+        .findFirst();
+
+    if (!getStaff.isEmpty()) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Email already exist!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
 
     String posisi = req.getString("posisi");
     switch (posisi.toLowerCase()) {
@@ -52,6 +63,11 @@ public class StaffService {
       case "engineer":
         staff.setPosisi(Posisi.Engineer);
         break;
+      default:
+        JsonObject result = new JsonObject();
+        result.put("status", "error");
+        result.put("message", "Unknown Posisi!!");
+        return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
     LocalDateTime actulTime = LocalDateTime.now();

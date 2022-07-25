@@ -1,5 +1,6 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -25,17 +26,20 @@ public class RuangInapController {
   RuangInapService ruangInapService;
 
   @GET
+  @RolesAllowed({ "user" })
   @Path("/kategori")
   public Response kategori() {
     return ruangInapService.getKategori();
   }
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return ruangInapService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("prefix") String prefix,
       @QueryParam("nomor") String nomor,
@@ -44,6 +48,7 @@ public class RuangInapController {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response update(
       @PathParam("id") Long id,
@@ -52,6 +57,7 @@ public class RuangInapController {
   }
 
   @DELETE
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response destroy(@PathParam("id") Long id) {
     return ruangInapService.drop(id);

@@ -1,0 +1,42 @@
+# ======================================================================================= #
+### PASIEN
+### ADD PASIEN
+POST http://localhost:8080/rumahsakit/pasien
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+Content-Type: application/json
+
+{
+  "nama_lengkap":"joko",
+  "gender":"pria",
+  "status":"mahasiswa",
+  "address":"pati",
+  "email":"joko@gmail.com",
+  "phone_number":"08532521120",
+  "is_cover_bpjs":true
+}
+
+
+### GET PASIEN
+// pagination 5 list data with filter by nama, email, phoneNumber
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/pasien
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+### UPDATE PASIEN by id
+PUT http://localhost:8080/rumahsakit/pasien/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+Content-Type: application/json
+
+{
+  "nama_lengkap":"Mahendra Kusuma",
+  "gender":"pria",
+  "status":"Pekerja",
+  "address":"Magelang",
+  "email":"mahendra@gmail.com",
+  "phone_number":"08532522490",
+  "is_cover_bpjs":false
+}
+
+### DELETE PASIEN by id
+DELETE  http://localhost:8080/rumahsakit/pasien/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg

@@ -1,0 +1,39 @@
+# ======================================================================================= #
+### DAFTAR SHIFT
+### ADD DAFTAR SHIFT
+POST http://localhost:8080/rumahsakit/daftar_shift
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzY0NjIsImV4cCI6MTY1ODczNzA2MiwianRpIjoiNjU2Mzc3MjYtMWFlMi00MWViLWExYWEtZmQzYTU5MWQyM2ZjIn0.H5nDbb6SJACh2nFPJ9VHPDkafI-C4TNstJ4cqKSvKqMlAafASiGvKaSU2vGA9cj3reY4Xd5WKERzMRsXATKYCAq2ECCQaINE6MbpCgEPV3HwUlWBQwpWKh5PZuG02MzXTI2azC1K2A-DtcJprWSVGnNdY1-cBjf8ikZg2YUByy3MKHKUeI64BRr6X8DGUfqqaoAhrxnp9TWp4g0eAgUMJvtoTTMi_DB9w7oewi7eedomng_Ih3FMAllg9lX-N9ZxA7YqRQFp1ZzuwwRLbxNzB9cSz0ByZt3gTusLRznYRF4e1LrcRfqsG_EDb2F6YF4vFTZYYZOz51EtzXZbdLFFSw
+Content-Type: application/json
+
+{
+  "kategori": "perawat",
+  "foreign_id":1,
+  "hari":[
+    "senin",
+    "rabu",
+    "jumat"
+  ]
+}
+
+### GET DAFTAR SHIFT
+// pagination 5 list data with filter by kagegori
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/daftar_shift
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+### UPDATE DAFTAR SHIFT
+PUT http://localhost:8080/rumahsakit/daftar_shift/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "kategori": "staff",
+  "foreign_id":3,
+  "hari":[
+    "selasa",
+    "kamis",
+    "sabtu"
+  ]
+}
+
+

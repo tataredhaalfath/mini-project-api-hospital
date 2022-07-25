@@ -1,6 +1,7 @@
 package org.acme.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -22,6 +23,18 @@ public class PasienService {
   @Transactional
   public Response add(JsonObject req) {
     Pasien pasien = new Pasien();
+    String email = req.getString("email");
+
+    List<Pasien> pasiens = Pasien.findAll().list();
+    Optional<Pasien> getPasien = pasiens.stream().filter(u -> u.getEmail().equalsIgnoreCase(email))
+        .findFirst();
+
+    if (!getPasien.isEmpty()) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Email already exist!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
 
     pasien.setNamaLengkap(req.getString("nama_lengkap"));
     pasien.setGender(req.getString("gender"));
@@ -112,6 +125,21 @@ public class PasienService {
       result.put("message", "Pasien not found!!");
 
       return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
+    String email = req.getString("email");
+
+    if (!pasien.getEmail().equalsIgnoreCase(email)) {
+      List<Pasien> pasiens = Pasien.findAll().list();
+      Optional<Pasien> getPasien = pasiens.stream().filter(u -> u.getEmail().equalsIgnoreCase(email))
+          .findFirst();
+
+      if (!getPasien.isEmpty()) {
+        JsonObject result = new JsonObject();
+        result.put("status", "error");
+        result.put("message", "Email already exist!");
+        return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+      }
+
     }
 
     pasien.setNamaLengkap(req.getString("nama_lengkap"));

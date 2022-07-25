@@ -1,0 +1,23 @@
+# ======================================================================================= #
+### DAFTAR RAWAT INAP
+### ADD DAFTAR RAWAT INAP
+POST http://localhost:8080/rumahsakit/daftar_rawat_inap
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+Content-Type: application/json
+
+{
+  "pasien_id":2,
+  "ruang_inap_id":2,
+  "dokter_id":2,
+  "perawat_satu_id":1,
+  "perawat_dua_id":2
+}
+### GET LIST DAFTAR RAWAT INAP 
+// pagination 5 list data 
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/daftar_rawat_inap?page=1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg
+
+### CHECKOUT DAFTAR RAWAT INAP by id
+PUT http://localhost:8080/rumahsakit/daftar_rawat_inap/checkout/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3Mzc4NTUsImV4cCI6MTY1ODczODQ1NSwianRpIjoiOThhMDdhOTgtYWU1ZS00MDhmLTlhNjgtYjM4NDY5OWU3NWRjIn0.fZgtMONdKKaJk9l2DKSAt3neET8-iK2sRAYa8hKV-8CcoNnopUhLSgGlsENCTJzC_HY0yJGdgVqygrszDtRsDrgUgElZclWNcbLIguLP-_8kAlQZuCwIA-HZLuH6ewe4d8uZNXd5YyvJx0yNvgy2dSKqFmSI5nohF74lDQ5IGg1SlZyv9cMVfUEpkmFDSrIZsI9pwsT68KxFf_57qSXBN1aFzaEOrQUD0S8yLJggInAjHWW1wSCD0jHPX2CHBCxPV-50UTO28rxEyteRRWWSPD2p-N16M5UZz97rqNa5UWP2G6gjpvdnbRIGHAHuicxygkiYMIKMs_uwLnyfrpIoOg

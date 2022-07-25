@@ -25,12 +25,12 @@ public class UserService {
 
     User user = User.find("username = ?1", username).singleResult();
     if (user == null) {
-      return Response.status(Response.Status.BAD_REQUEST).entity("username tidak ada").build();
+      return Response.status(Response.Status.BAD_REQUEST).entity("username not found!").build();
     }
 
     if (!user.getPassword()
         .equalsIgnoreCase(Base64.getEncoder().encodeToString(password.getBytes(StandardCharsets.UTF_8)))) {
-      return Response.status(Response.Status.BAD_REQUEST).entity("password salah").build();
+      return Response.status(Response.Status.BAD_REQUEST).entity("wrong password!").build();
     }
 
     JsonObject data = new JsonObject();
@@ -69,14 +69,14 @@ public class UserService {
 
     if (!userNameExist.isEmpty()) {
       JsonObject result = new JsonObject();
-      result.put("status", "success");
+      result.put("status", "error");
       result.put("message", "Username already exist!");
       return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
     if (!emailExist.isEmpty()) {
       JsonObject result = new JsonObject();
-      result.put("status", "success");
+      result.put("status", "error");
       result.put("message", "Email already exist!");
       return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }

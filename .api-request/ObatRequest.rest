@@ -1,0 +1,42 @@
+# ======================================================================================= #
+### OBAT
+### LIST OBAT KATEGORI
+GET http://localhost:8080/rumahsakit/obat/kategori
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+### ADD OBAT
+POST http://localhost:8080/rumahsakit/obat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "nama_obat":"Panadol",
+  "produksi":"kimia farma",
+  "obat_kategori":"pil",
+  "deskripsi":"Obat Sakit Kepala"
+}
+
+### GET OBAT
+// pagination 5 list data with filter by nama, produksi, kategori
+// can get data with page number from pagination by page
+GET http://localhost:8080/rumahsakit/obat
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+
+### UPDATE OBAT
+PUT http://localhost:8080/rumahsakit/obat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+Content-Type: application/json
+
+{
+  "nama_obat":"Multivitamin",
+  "produksi":"Multivit Jaya",
+  "obat_kategori":"pilasa",
+  "deskripsi":"Vitamin anak"
+}
+
+### DELETE OBAT By Id
+DELETE  http://localhost:8080/rumahsakit/obat/1
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InJlZGhhIiwiZ3JvdXBzIjpbInVzZXIiXSwiZW1haWwiOiJyZWRoYUBlbWFpbC5jb20iLCJpYXQiOjE2NTg3MzcxNzYsImV4cCI6MTY1ODczNzc3NiwianRpIjoiZDE4NzM4MjUtZDE5NC00NmZjLThkNWMtODM2YWUxNWZiYjVjIn0.JiAlkAKD6RwNI6_q9wQ_2sub_2h7GCdvHp7SpYW1-fanQNq4gHdBUlOb7QBVdtfEs8LmjsSYDl1qSz1BDsUPEB-W8WosNthwMM264juxTZp-uPKFFixeIfUec3hlycAdziW0ELawHMvqVv7ra-pj1dsDRKk0PPpwlmGNKYAcpfD3b8VhHS88d5uUiaB2hghExQNrT4QBV5XeK6NvgPxmp8AJUb6Gn2Bmk80TiQq0QLtS1rUf5N1FjDUnhEyaaDRWQaUh8dPW9jqhBDJiubNyhgIrCjURtr7aKnMqurp46R9bO_ztM1grAr3mQKkDXABrtUTSfFHixbd-PdkwloioKw
+
+

@@ -1,8 +1,8 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
 import javax.ws.rs.PUT;
@@ -25,17 +25,20 @@ public class DaftarRawatInapController {
   DaftarRawatInapService daftarRawatInapService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return daftarRawatInapService.add(req);
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/checkout/{id}")
   public Response checkout(@PathParam("id") Long id) {
     return daftarRawatInapService.checkout(id);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("nama") String nama,
       @QueryParam("ruang") String ruang,

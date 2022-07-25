@@ -1,5 +1,6 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -26,11 +27,13 @@ public class StaffController {
   StaffService staffService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return staffService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("nama") String nama,
       @QueryParam("email") String email,
@@ -40,18 +43,21 @@ public class StaffController {
   }
 
   @GET
+  @RolesAllowed({ "user" })
   @Path("/posisi")
-  public Response posisiList(){
+  public Response posisiList() {
     return staffService.listPosisi();
   }
 
   @DELETE
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response destroy(@PathParam("id") Long id) {
     return staffService.drop(id);
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response updateGaji(
       @PathParam("id") Long id,

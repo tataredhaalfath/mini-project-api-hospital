@@ -1,5 +1,6 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.GET;
@@ -24,11 +25,13 @@ public class JadwalPraktik {
   JadwalPraktikService jadwalPraktikService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return jadwalPraktikService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("hari") String hari,
       @QueryParam("page") int page) {
@@ -36,6 +39,7 @@ public class JadwalPraktik {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response update(
       @PathParam("id") Long id,

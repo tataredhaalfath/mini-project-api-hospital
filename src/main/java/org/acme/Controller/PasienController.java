@@ -27,6 +27,7 @@ public class PasienController {
   PasienService pasienService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return pasienService.add(req);
   }
@@ -42,6 +43,7 @@ public class PasienController {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response update(
       @PathParam("id") Long id,
@@ -50,6 +52,7 @@ public class PasienController {
   }
 
   @DELETE
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response destroy(@PathParam("id") Long id) {
     return pasienService.drop(id);

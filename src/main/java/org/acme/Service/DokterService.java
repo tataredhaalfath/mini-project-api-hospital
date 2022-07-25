@@ -1,6 +1,7 @@
 package org.acme.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
@@ -30,6 +31,17 @@ public class DokterService {
     Long gaji = req.getLong("gaji");
 
     Dokter dokter = new Dokter();
+
+    List<Dokter> dokters = Dokter.findAll().list();
+    Optional<Dokter> getDokter = dokters.stream().filter(u -> u.getEmail().equalsIgnoreCase(email))
+        .findFirst();
+
+    if (!getDokter.isEmpty()) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "Email already exist!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
+    }
 
     dokter.setNamaLengkap(namaLengkap);
     dokter.setIsSpesialis(isSpesialis);

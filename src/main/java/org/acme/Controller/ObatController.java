@@ -1,5 +1,6 @@
 package org.acme.Controller;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.DELETE;
@@ -26,17 +27,20 @@ public class ObatController {
   ObatService obatService;
 
   @POST
+  @RolesAllowed({ "user" })
   public Response create(JsonObject req) {
     return obatService.add(req);
   }
 
   @GET
+  @RolesAllowed({ "user" })
   @Path("/kategori")
   public Response kategori() {
     return obatService.kategori();
   }
 
   @GET
+  @RolesAllowed({ "user" })
   public Response getAll(
       @QueryParam("nama") String nama,
       @QueryParam("produksi") String produksi,
@@ -46,12 +50,14 @@ public class ObatController {
   }
 
   @PUT
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response update(@PathParam("id") Long id, JsonObject req) {
     return obatService.update(id, req);
   }
 
   @DELETE
+  @RolesAllowed({ "user" })
   @Path("/{id}")
   public Response destroy(@PathParam("id") Long id) {
     return obatService.drop(id);
