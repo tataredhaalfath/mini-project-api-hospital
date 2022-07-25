@@ -1,9 +1,8 @@
-
 # ======================================================================================= #
 ### USER
 ### REGISTRATION
 POST http://localhost:8080/rumahsakit/user/register
-Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODczNjQ0MiwiZXhwIjoxNjU4NzM3MDQyLCJqdGkiOiJjNzdkYjY3NS1lMzU5LTRmZDMtYWRhZC1mY2RmZWU0NGZiMjEifQ.Fav_BXWBr5OzC7RCI6eOSbJfhaRSs_4r9hn3q9MLTr1inZOA6-Mxht5J7T42-QdjZnyFqdSuFimwx_1gSokvCGqia2FPqbRTpNj3du7EfTfY2Q7__BuAg6AJfNrsXRo03yr-doLljHzQzx-GvEcs_s37eSHysbesczVNHueFbe9qJeO6MB1REFLa64CPQreIODSZIx1EJAYMdRyL8fDkbBD_dTacidF0MY9y4a00MljKijY76_j3_k_emDB_MGtocwiGtPnbXS-GLQ_gDINmEkLrCKx1rgwpLxpvX4nadOEPQy68tDSITWnf3VqjWlg-3N1KwHwUevyp2T_SCpEhKw
+Authorization: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpc3MiOiJodHRwOi8va2F3YWhlZHVrYXNpL2lzc3VlciIsInVwbiI6InN1cGVyQWRtaW4iLCJncm91cHMiOlsic3VwZXJBZG1pbiJdLCJlbWFpbCI6InJlZGhhQGVtYWlsLmNvbSIsImlhdCI6MTY1ODc0MDYyMCwiZXhwIjoxNjU4NzQxMjIwLCJqdGkiOiI1MWZkMDRlMi1iZjU5LTRmMzEtODM3Yi03MjM3OGUyZWIwZmYifQ.AySkjlMi2eEFOaANantZzsNn43-TmhGUMe3-s6X_gParRSpmQ6RCIcD2ZSjgQmW_YXFbDA8o9wfsCrQokv3s9TnCI2ZQ-S-SjlZ2oE1yjwV8_z_7AldDmIa1xSR0b8c8F_QGXakDWT5AUsU3mDbgrEDl8az952Rg6rJxeLHLL8U246ioHl3OXCCkE7QvV6U-KM0q1XAJY_fB4F4G0nV6HrhImPpO-c-SLgOuvADxvO0qPfgpU1zo8xezQ9SmXx4RUSBaJgWzJC8lyPI8dy8mwOtEDjMNDxwgZjz2nBbrhtXWcNQQ-xTPzxc9EFcz1puSTTRsWxPGAqf-iSsyOSfW-Q
 Content-Type: application/json
 
 {
@@ -24,6 +23,6 @@ Content-Type: application/json
 
 {
 
-  "username":"redha",
-  "password":"redha"
+  "username":"alfath",
+  "password":"alfath"
 }

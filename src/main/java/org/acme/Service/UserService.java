@@ -23,14 +23,25 @@ public class UserService {
     String username = req.getString("username");
     String password = req.getString("password");
 
-    User user = User.find("username = ?1", username).singleResult();
-    if (user == null) {
-      return Response.status(Response.Status.BAD_REQUEST).entity("username not found!").build();
+    // User user = User.find("username = ?1", username).singleResult();
+    List<User> users = User.findAll().list();
+    Optional<User> getUser = users.stream().filter(u -> u.getUsername().equalsIgnoreCase(username))
+        .findFirst();
+
+    if (getUser.isEmpty()) {
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "username not found!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
+    User user = getUser.get();
 
     if (!user.getPassword()
         .equalsIgnoreCase(Base64.getEncoder().encodeToString(password.getBytes(StandardCharsets.UTF_8)))) {
-      return Response.status(Response.Status.BAD_REQUEST).entity("wrong password!").build();
+      JsonObject result = new JsonObject();
+      result.put("status", "error");
+      result.put("message", "wrong password!");
+      return Response.status(Response.Status.BAD_REQUEST).entity(result).build();
     }
 
     JsonObject data = new JsonObject();

@@ -71,7 +71,7 @@ public class StaffService {
     }
 
     LocalDateTime actulTime = LocalDateTime.now();
-
+    
     staff.setNamaLengkap(req.getString("nama_lengkap"));
     staff.setGender(req.getString("gender"));
     staff.setStartTime(LocalDateTime.now());
